@@ -1,0 +1,1921 @@
+{
+   "library" : {
+      "identifier" : {
+         "id" : "everest"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localIdentifier" : "VACh33",
+            "uri" : "urn:mitre-org:vach33",
+            "version" : "1"
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "name" : "ID",
+            "accessLevel" : "Public",
+            "parameterTypeSpecifier" : {
+               "name" : "{urn:hl7-org:elm-types:r1}String",
+               "type" : "NamedTypeSpecifier"
+            }
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "type" : "SingletonFrom",
+               "operand" : {
+                  "dataType" : "{urn:mitre-org:vach33}Claimant",
+                  "templateId" : "Claimant",
+                  "type" : "Retrieve"
+               }
+            }
+         }, {
+            "name" : "HON",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}String",
+               "value" : "honorable",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "DIS",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}String",
+               "value" : "discharge",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "CIWD",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}String",
+               "value" : "CIWD",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "EPTS",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}String",
+               "value" : "EPTS",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "HDSHP",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}String",
+               "value" : "HDSHP",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "sepreason",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "List",
+               "element" : [ {
+                  "name" : "CIWD",
+                  "type" : "ExpressionRef"
+               }, {
+                  "name" : "EPTS",
+                  "type" : "ExpressionRef"
+               }, {
+                  "name" : "HDSHP",
+                  "type" : "ExpressionRef"
+               }, {
+                  "name" : "DIS",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "name" : "notServed",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+               "value" : "0",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "notEligible",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+               "value" : "1",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "goToBR2",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+               "value" : "2",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "goToBR3",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+               "value" : "3",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "goToBR4",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+               "value" : "4",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "goToBR5",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+               "value" : "5",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "gotoDetermineEligibilityPeriodprocess",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+               "value" : "6",
+               "type" : "Literal"
+            }
+         }, {
+            "name" : "nine11",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "DateTime",
+               "year" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "2001",
+                  "type" : "Literal"
+               },
+               "month" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "9",
+                  "type" : "Literal"
+               },
+               "day" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "11",
+                  "type" : "Literal"
+               },
+               "hour" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               },
+               "minute" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               },
+               "second" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               },
+               "millisecond" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               }
+            }
+         }, {
+            "name" : "nine10",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "DateTime",
+               "year" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "2001",
+                  "type" : "Literal"
+               },
+               "month" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "9",
+                  "type" : "Literal"
+               },
+               "day" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "10",
+                  "type" : "Literal"
+               },
+               "hour" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               },
+               "minute" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               },
+               "second" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               },
+               "millisecond" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               }
+            }
+         }, {
+            "name" : "claimant",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Patient",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "name" : "ServiceInterval",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Query",
+               "source" : [ {
+                  "alias" : "CS",
+                  "expression" : {
+                     "path" : "service",
+                     "type" : "Property",
+                     "source" : {
+                        "name" : "claimant",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               } ],
+               "relationship" : [ {
+                  "alias" : "CS2",
+                  "type" : "With",
+                  "expression" : {
+                     "path" : "service",
+                     "type" : "Property",
+                     "source" : {
+                        "name" : "claimant",
+                        "type" : "ExpressionRef"
+                     }
+                  },
+                  "suchThat" : {
+                     "type" : "Not",
+                     "operand" : {
+                        "type" : "OverlapsAfter",
+                        "operand" : [ {
+                           "lowClosed" : true,
+                           "highClosed" : true,
+                           "type" : "Interval",
+                           "low" : {
+                              "path" : "EOD",
+                              "scope" : "CS",
+                              "type" : "Property"
+                           },
+                           "high" : {
+                              "path" : "RAD",
+                              "scope" : "CS",
+                              "type" : "Property"
+                           }
+                        }, {
+                           "lowClosed" : true,
+                           "highClosed" : true,
+                           "type" : "Interval",
+                           "low" : {
+                              "path" : "EOD",
+                              "scope" : "CS2",
+                              "type" : "Property"
+                           },
+                           "high" : {
+                              "path" : "RAD",
+                              "scope" : "CS2",
+                              "type" : "Property"
+                           }
+                        } ]
+                     }
+                  }
+               } ],
+               "where" : {
+                  "type" : "Or",
+                  "operand" : [ {
+                     "precision" : "Day",
+                     "type" : "SameOrAfter",
+                     "operand" : [ {
+                        "path" : "RAD",
+                        "scope" : "CS",
+                        "type" : "Property"
+                     }, {
+                        "name" : "nine11",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "type" : "IsNull",
+                     "operand" : {
+                        "path" : "RAD",
+                        "scope" : "CS",
+                        "type" : "Property"
+                     }
+                  } ]
+               },
+               "return" : {
+                  "expression" : {
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "path" : "EOD",
+                        "scope" : "CS",
+                        "type" : "Property"
+                     },
+                     "high" : {
+                        "path" : "RAD",
+                        "scope" : "CS",
+                        "type" : "Property"
+                     }
+                  }
+               },
+               "sort" : {
+                  "by" : [ {
+                     "direction" : "asc",
+                     "type" : "ByExpression",
+                     "expression" : {
+                        "path" : "EOD",
+                        "scope" : "CS",
+                        "type" : "Property"
+                     }
+                  } ]
+               }
+            }
+         }, {
+            "name" : "serviceParameters",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Query",
+               "source" : [ {
+                  "alias" : "CS",
+                  "expression" : {
+                     "path" : "service",
+                     "type" : "Property",
+                     "source" : {
+                        "name" : "claimant",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               }, {
+                  "alias" : "SI",
+                  "expression" : {
+                     "name" : "ServiceInterval",
+                     "type" : "ExpressionRef"
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "type" : "And",
+                  "operand" : [ {
+                     "precision" : "Day",
+                     "type" : "SameAs",
+                     "operand" : [ {
+                        "type" : "Start",
+                        "operand" : {
+                           "name" : "SI",
+                           "type" : "AliasRef"
+                        }
+                     }, {
+                        "path" : "EOD",
+                        "scope" : "CS",
+                        "type" : "Property"
+                     } ]
+                  }, {
+                     "precision" : "Day",
+                     "type" : "SameAs",
+                     "operand" : [ {
+                        "type" : "End",
+                        "operand" : {
+                           "name" : "SI",
+                           "type" : "AliasRef"
+                        }
+                     }, {
+                        "path" : "RAD",
+                        "scope" : "CS",
+                        "type" : "Property"
+                     } ]
+                  } ]
+               },
+               "return" : {
+                  "expression" : {
+                     "type" : "Tuple",
+                     "element" : [ {
+                        "name" : "S",
+                        "value" : {
+                           "name" : "SI",
+                           "type" : "AliasRef"
+                        }
+                     }, {
+                        "name" : "Character",
+                        "value" : {
+                           "path" : "character",
+                           "scope" : "CS",
+                           "type" : "Property"
+                        }
+                     }, {
+                        "name" : "SepReason",
+                        "value" : {
+                           "path" : "separationReason",
+                           "scope" : "CS",
+                           "type" : "Property"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "name" : "CalculateISP",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "type" : "Case",
+               "caseItem" : [ {
+                  "when" : {
+                     "type" : "Before",
+                     "operand" : [ {
+                        "type" : "Start",
+                        "operand" : {
+                           "name" : "service",
+                           "type" : "OperandRef"
+                        }
+                     }, {
+                        "name" : "nine11",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "then" : {
+                     "type" : "Case",
+                     "caseItem" : [ {
+                        "when" : {
+                           "type" : "Before",
+                           "operand" : [ {
+                              "type" : "End",
+                              "operand" : {
+                                 "name" : "service",
+                                 "type" : "OperandRef"
+                              }
+                           }, {
+                              "name" : "Now",
+                              "type" : "FunctionRef",
+                              "operand" : [ ]
+                           } ]
+                        },
+                        "then" : {
+                           "precision" : "Day",
+                           "type" : "DurationBetween",
+                           "operand" : [ {
+                              "name" : "nine11",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "type" : "End",
+                              "operand" : {
+                                 "name" : "service",
+                                 "type" : "OperandRef"
+                              }
+                           } ]
+                        }
+                     } ],
+                     "else" : {
+                        "precision" : "Day",
+                        "type" : "DurationBetween",
+                        "operand" : [ {
+                           "name" : "nine11",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "type" : "Add",
+                           "operand" : [ {
+                              "name" : "Today",
+                              "type" : "FunctionRef",
+                              "operand" : [ ]
+                           }, {
+                              "value" : 1,
+                              "unit" : "day",
+                              "type" : "Quantity"
+                           } ]
+                        } ]
+                     }
+                  }
+               } ],
+               "else" : {
+                  "type" : "Case",
+                  "caseItem" : [ {
+                     "when" : {
+                        "type" : "Before",
+                        "operand" : [ {
+                           "type" : "End",
+                           "operand" : {
+                              "name" : "service",
+                              "type" : "OperandRef"
+                           }
+                        }, {
+                           "name" : "Now",
+                           "type" : "FunctionRef",
+                           "operand" : [ ]
+                        } ]
+                     },
+                     "then" : {
+                        "precision" : "Day",
+                        "type" : "DurationBetween",
+                        "operand" : [ {
+                           "type" : "Start",
+                           "operand" : {
+                              "name" : "service",
+                              "type" : "OperandRef"
+                           }
+                        }, {
+                           "type" : "End",
+                           "operand" : {
+                              "name" : "service",
+                              "type" : "OperandRef"
+                           }
+                        } ]
+                     }
+                  } ],
+                  "else" : {
+                     "precision" : "Day",
+                     "type" : "DurationBetween",
+                     "operand" : [ {
+                        "type" : "Start",
+                        "operand" : {
+                           "name" : "service",
+                           "type" : "OperandRef"
+                        }
+                     }, {
+                        "type" : "Add",
+                        "operand" : [ {
+                           "name" : "Today",
+                           "type" : "FunctionRef",
+                           "operand" : [ ]
+                        }, {
+                           "value" : 1,
+                           "unit" : "day",
+                           "type" : "Quantity"
+                        } ]
+                     } ]
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "service",
+               "operandTypeSpecifier" : {
+                  "type" : "IntervalTypeSpecifier",
+                  "pointType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "name" : "served30ContinousDays",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Exists",
+               "operand" : {
+                  "type" : "Query",
+                  "source" : [ {
+                     "alias" : "S",
+                     "expression" : {
+                        "name" : "ServiceInterval",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "type" : "GreaterOrEqual",
+                     "operand" : [ {
+                        "name" : "CalculateISP",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "name" : "S",
+                           "type" : "AliasRef"
+                        } ]
+                     }, {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "30",
+                        "type" : "Literal"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "name" : "TotalServicePeriod",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Sum",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "Query",
+                  "source" : [ {
+                     "alias" : "S",
+                     "expression" : {
+                        "name" : "ServiceInterval",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "return" : {
+                     "expression" : {
+                        "name" : "CalculateISP",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "name" : "S",
+                           "type" : "AliasRef"
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "name" : "getTrainingInterval",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "type" : "Query",
+               "source" : [ {
+                  "alias" : "T",
+                  "expression" : {
+                     "type" : "Expand",
+                     "operand" : {
+                        "type" : "Query",
+                        "source" : [ {
+                           "alias" : "S",
+                           "expression" : {
+                              "path" : "service",
+                              "type" : "Property",
+                              "source" : {
+                                 "name" : "claimant",
+                                 "type" : "ExpressionRef"
+                              }
+                           }
+                        } ],
+                        "relationship" : [ ],
+                        "return" : {
+                           "expression" : {
+                              "path" : "training",
+                              "scope" : "S",
+                              "type" : "Property"
+                           }
+                        }
+                     }
+                  }
+               } ],
+               "relationship" : [ ],
+               "where" : {
+                  "type" : "And",
+                  "operand" : [ {
+                     "type" : "And",
+                     "operand" : [ {
+                        "precision" : "Day",
+                        "type" : "SameOrAfter",
+                        "operand" : [ {
+                           "path" : "STD",
+                           "scope" : "T",
+                           "type" : "Property"
+                        }, {
+                           "type" : "Start",
+                           "operand" : {
+                              "name" : "service",
+                              "type" : "OperandRef"
+                           }
+                        } ]
+                     }, {
+                        "precision" : "Day",
+                        "type" : "SameOrBefore",
+                        "operand" : [ {
+                           "path" : "ETD",
+                           "scope" : "T",
+                           "type" : "Property"
+                        }, {
+                           "type" : "End",
+                           "operand" : {
+                              "name" : "service",
+                              "type" : "OperandRef"
+                           }
+                        } ]
+                     } ]
+                  }, {
+                     "type" : "After",
+                     "operand" : [ {
+                        "path" : "ETD",
+                        "scope" : "T",
+                        "type" : "Property"
+                     }, {
+                        "path" : "STD",
+                        "scope" : "T",
+                        "type" : "Property"
+                     } ]
+                  } ]
+               },
+               "return" : {
+                  "expression" : {
+                     "lowClosed" : true,
+                     "highClosed" : true,
+                     "type" : "Interval",
+                     "low" : {
+                        "path" : "STD",
+                        "scope" : "T",
+                        "type" : "Property"
+                     },
+                     "high" : {
+                        "path" : "ETD",
+                        "scope" : "T",
+                        "type" : "Property"
+                     }
+                  }
+               },
+               "sort" : {
+                  "by" : [ {
+                     "direction" : "asc",
+                     "type" : "ByExpression",
+                     "expression" : {
+                        "path" : "STD",
+                        "scope" : "T",
+                        "type" : "Property"
+                     }
+                  } ]
+               }
+            },
+            "operand" : [ {
+               "name" : "service",
+               "operandTypeSpecifier" : {
+                  "type" : "IntervalTypeSpecifier",
+                  "pointType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "name" : "CalculateITP",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "name" : "Sum",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "Query",
+                  "source" : [ {
+                     "alias" : "X",
+                     "expression" : {
+                        "type" : "Collapse",
+                        "operand" : {
+                           "name" : "getTrainingInterval",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "name" : "service",
+                              "type" : "OperandRef"
+                           } ]
+                        }
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "return" : {
+                     "expression" : {
+                        "precision" : "Day",
+                        "type" : "DurationBetween",
+                        "operand" : [ {
+                           "type" : "Start",
+                           "operand" : {
+                              "name" : "X",
+                              "type" : "AliasRef"
+                           }
+                        }, {
+                           "type" : "End",
+                           "operand" : {
+                              "name" : "X",
+                              "type" : "AliasRef"
+                           }
+                        } ]
+                     }
+                  }
+               } ]
+            },
+            "operand" : [ {
+               "name" : "service",
+               "operandTypeSpecifier" : {
+                  "type" : "IntervalTypeSpecifier",
+                  "pointType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "name" : "AggregateTrainingPeriod",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Sum",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "Query",
+                  "source" : [ {
+                     "alias" : "S",
+                     "expression" : {
+                        "name" : "ServiceInterval",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "return" : {
+                     "expression" : {
+                        "name" : "CalculateITP",
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                           "name" : "S",
+                           "type" : "AliasRef"
+                        } ]
+                     }
+                  }
+               } ]
+            }
+         }, {
+            "name" : "TotalQualifyingDaysInServicePeriod",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "type" : "Subtract",
+               "operand" : [ {
+                  "name" : "CalculateISP",
+                  "type" : "FunctionRef",
+                  "operand" : [ {
+                     "name" : "service",
+                     "type" : "OperandRef"
+                  } ]
+               }, {
+                  "name" : "CalculateITP",
+                  "type" : "FunctionRef",
+                  "operand" : [ {
+                     "name" : "service",
+                     "type" : "OperandRef"
+                  } ]
+               } ]
+            },
+            "operand" : [ {
+               "name" : "service",
+               "operandTypeSpecifier" : {
+                  "type" : "IntervalTypeSpecifier",
+                  "pointType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "name" : "TotalAggregateQualifyingDays",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Subtract",
+               "operand" : [ {
+                  "name" : "TotalServicePeriod",
+                  "type" : "ExpressionRef"
+               }, {
+                  "name" : "AggregateTrainingPeriod",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "name" : "QualifyingDaysBeforeStartTraining",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "type" : "If",
+               "condition" : {
+                  "type" : "Or",
+                  "operand" : [ {
+                     "type" : "IsNull",
+                     "operand" : {
+                        "type" : "Start",
+                        "operand" : {
+                           "name" : "First",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "name" : "getTrainingInterval",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "name" : "service",
+                                 "type" : "OperandRef"
+                              } ]
+                           } ]
+                        }
+                     }
+                  }, {
+                     "type" : "Before",
+                     "operand" : [ {
+                        "type" : "Start",
+                        "operand" : {
+                           "name" : "First",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "name" : "getTrainingInterval",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "name" : "service",
+                                 "type" : "OperandRef"
+                              } ]
+                           } ]
+                        }
+                     }, {
+                        "name" : "nine11",
+                        "type" : "ExpressionRef"
+                     } ]
+                  } ]
+               },
+               "then" : {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "0",
+                  "type" : "Literal"
+               },
+               "else" : {
+                  "type" : "If",
+                  "condition" : {
+                     "type" : "Before",
+                     "operand" : [ {
+                        "type" : "Start",
+                        "operand" : {
+                           "name" : "service",
+                           "type" : "OperandRef"
+                        }
+                     }, {
+                        "name" : "nine11",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "then" : {
+                     "precision" : "Day",
+                     "type" : "DurationBetween",
+                     "operand" : [ {
+                        "name" : "nine11",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "type" : "Add",
+                        "operand" : [ {
+                           "type" : "Start",
+                           "operand" : {
+                              "name" : "First",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "name" : "getTrainingInterval",
+                                 "type" : "FunctionRef",
+                                 "operand" : [ {
+                                    "name" : "service",
+                                    "type" : "OperandRef"
+                                 } ]
+                              } ]
+                           }
+                        }, {
+                           "value" : 1,
+                           "unit" : "day",
+                           "type" : "Quantity"
+                        } ]
+                     } ]
+                  },
+                  "else" : {
+                     "precision" : "Day",
+                     "type" : "DurationBetween",
+                     "operand" : [ {
+                        "type" : "Start",
+                        "operand" : {
+                           "name" : "service",
+                           "type" : "OperandRef"
+                        }
+                     }, {
+                        "type" : "Start",
+                        "operand" : {
+                           "name" : "First",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "name" : "getTrainingInterval",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "name" : "service",
+                                 "type" : "OperandRef"
+                              } ]
+                           } ]
+                        }
+                     } ]
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "service",
+               "operandTypeSpecifier" : {
+                  "type" : "IntervalTypeSpecifier",
+                  "pointType" : {
+                     "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                     "type" : "NamedTypeSpecifier"
+                  }
+               }
+            } ]
+         }, {
+            "name" : "isOnActiveDuty",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "IsNull",
+               "operand" : {
+                  "type" : "End",
+                  "operand" : {
+                     "name" : "Last",
+                     "type" : "FunctionRef",
+                     "operand" : [ {
+                        "name" : "ServiceInterval",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "name" : "FirstServiceInterval",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "First",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "name" : "ServiceInterval",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "name" : "DaysInFirstServiceInterval",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "CalculateISP",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "name" : "FirstServiceInterval",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "name" : "SecondServiceInterval",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Indexer",
+               "operand" : [ {
+                  "name" : "ServiceInterval",
+                  "type" : "ExpressionRef"
+               }, {
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "2",
+                  "type" : "Literal"
+               } ]
+            }
+         }, {
+            "name" : "DaysInSecondServiceInterval",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "CalculateISP",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "name" : "SecondServiceInterval",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "name" : "CalculateClaimantEligibilityDate",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "type" : "FunctionDef",
+            "expression" : {
+               "type" : "Case",
+               "caseItem" : [ {
+                  "when" : {
+                     "type" : "And",
+                     "operand" : [ {
+                        "type" : "GreaterOrEqual",
+                        "operand" : [ {
+                           "name" : "TotalQualifyingDaysInServicePeriod",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "name" : "FirstServiceInterval",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "90",
+                           "type" : "Literal"
+                        } ]
+                     }, {
+                        "type" : "Equal",
+                        "operand" : [ {
+                           "name" : "DaysInFirstServiceInterval",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "0",
+                           "type" : "Literal"
+                        } ]
+                     } ]
+                  },
+                  "then" : {
+                     "type" : "Case",
+                     "caseItem" : [ {
+                        "when" : {
+                           "type" : "After",
+                           "operand" : [ {
+                              "type" : "Start",
+                              "operand" : {
+                                 "name" : "FirstServiceInterval",
+                                 "type" : "ExpressionRef"
+                              }
+                           }, {
+                              "name" : "nine10",
+                              "type" : "ExpressionRef"
+                           } ]
+                        },
+                        "then" : {
+                           "type" : "Add",
+                           "operand" : [ {
+                              "type" : "Start",
+                              "operand" : {
+                                 "name" : "FirstServiceInterval",
+                                 "type" : "ExpressionRef"
+                              }
+                           }, {
+                              "value" : 89,
+                              "unit" : "days",
+                              "type" : "Quantity"
+                           } ]
+                        }
+                     }, {
+                        "when" : {
+                           "type" : "Before",
+                           "operand" : [ {
+                              "type" : "Start",
+                              "operand" : {
+                                 "name" : "FirstServiceInterval",
+                                 "type" : "ExpressionRef"
+                              }
+                           }, {
+                              "name" : "nine11",
+                              "type" : "ExpressionRef"
+                           } ]
+                        },
+                        "then" : {
+                           "type" : "Add",
+                           "operand" : [ {
+                              "name" : "nine10",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "value" : 90,
+                              "unit" : "days",
+                              "type" : "Quantity"
+                           } ]
+                        }
+                     } ],
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}DateTime",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }
+               }, {
+                  "when" : {
+                     "type" : "And",
+                     "operand" : [ {
+                        "type" : "And",
+                        "operand" : [ {
+                           "type" : "And",
+                           "operand" : [ {
+                              "type" : "Less",
+                              "operand" : [ {
+                                 "name" : "TotalQualifyingDaysInServicePeriod",
+                                 "type" : "FunctionRef",
+                                 "operand" : [ {
+                                    "name" : "FirstServiceInterval",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "value" : "90",
+                                 "type" : "Literal"
+                              } ]
+                           }, {
+                              "type" : "Equal",
+                              "operand" : [ {
+                                 "name" : "DaysInFirstServiceInterval",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                 "value" : "0",
+                                 "type" : "Literal"
+                              } ]
+                           } ]
+                        }, {
+                           "type" : "GreaterOrEqual",
+                           "operand" : [ {
+                              "name" : "TotalQualifyingDaysInServicePeriod",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "name" : "SecondServiceInterval",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "90",
+                              "type" : "Literal"
+                           } ]
+                        } ]
+                     }, {
+                        "type" : "Equal",
+                        "operand" : [ {
+                           "name" : "DaysInSecondServiceInterval",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "0",
+                           "type" : "Literal"
+                        } ]
+                     } ]
+                  },
+                  "then" : {
+                     "type" : "Subtract",
+                     "operand" : [ {
+                        "type" : "Add",
+                        "operand" : [ {
+                           "type" : "Start",
+                           "operand" : {
+                              "name" : "SecondServiceInterval",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "value" : 90,
+                           "unit" : "days",
+                           "type" : "Quantity"
+                        } ]
+                     }, {
+                        "classType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                        "type" : "Instance",
+                        "element" : [ {
+                           "name" : "value",
+                           "value" : {
+                              "name" : "ToDecimal",
+                              "libraryName" : "System",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "name" : "TotalQualifyingDaysInServicePeriod",
+                                 "type" : "FunctionRef",
+                                 "operand" : [ {
+                                    "name" : "FirstServiceInterval",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              } ]
+                           }
+                        }, {
+                           "name" : "unit",
+                           "value" : {
+                              "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                              "value" : "d",
+                              "type" : "Literal"
+                           }
+                        } ]
+                     } ]
+                  }
+               }, {
+                  "when" : {
+                     "type" : "And",
+                     "operand" : [ {
+                        "type" : "GreaterOrEqual",
+                        "operand" : [ {
+                           "name" : "TotalQualifyingDaysInServicePeriod",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "name" : "FirstServiceInterval",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "90",
+                           "type" : "Literal"
+                        } ]
+                     }, {
+                        "type" : "Greater",
+                        "operand" : [ {
+                           "name" : "DaysInFirstServiceInterval",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "0",
+                           "type" : "Literal"
+                        } ]
+                     } ]
+                  },
+                  "then" : {
+                     "type" : "Case",
+                     "caseItem" : [ {
+                        "when" : {
+                           "type" : "GreaterOrEqual",
+                           "operand" : [ {
+                              "name" : "QualifyingDaysBeforeStartTraining",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "name" : "FirstServiceInterval",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "90",
+                              "type" : "Literal"
+                           } ]
+                        },
+                        "then" : {
+                           "type" : "Add",
+                           "operand" : [ {
+                              "type" : "Start",
+                              "operand" : {
+                                 "name" : "FirstServiceInterval",
+                                 "type" : "ExpressionRef"
+                              }
+                           }, {
+                              "value" : 89,
+                              "unit" : "days",
+                              "type" : "Quantity"
+                           } ]
+                        }
+                     }, {
+                        "when" : {
+                           "type" : "Less",
+                           "operand" : [ {
+                              "name" : "QualifyingDaysBeforeStartTraining",
+                              "type" : "FunctionRef",
+                              "operand" : [ {
+                                 "name" : "FirstServiceInterval",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "value" : "90",
+                              "type" : "Literal"
+                           } ]
+                        },
+                        "then" : {
+                           "type" : "Subtract",
+                           "operand" : [ {
+                              "type" : "Add",
+                              "operand" : [ {
+                                 "type" : "End",
+                                 "operand" : {
+                                    "name" : "Last",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "getTrainingInterval",
+                                       "type" : "FunctionRef",
+                                       "operand" : [ {
+                                          "name" : "FirstServiceInterval",
+                                          "type" : "ExpressionRef"
+                                       } ]
+                                    } ]
+                                 }
+                              }, {
+                                 "value" : 90,
+                                 "unit" : "days",
+                                 "type" : "Quantity"
+                              } ]
+                           }, {
+                              "classType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                              "type" : "Instance",
+                              "element" : [ {
+                                 "name" : "value",
+                                 "value" : {
+                                    "name" : "ToDecimal",
+                                    "libraryName" : "System",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "QualifyingDaysBeforeStartTraining",
+                                       "type" : "FunctionRef",
+                                       "operand" : [ {
+                                          "name" : "FirstServiceInterval",
+                                          "type" : "ExpressionRef"
+                                       } ]
+                                    } ]
+                                 }
+                              }, {
+                                 "name" : "unit",
+                                 "value" : {
+                                    "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                    "value" : "d",
+                                    "type" : "Literal"
+                                 }
+                              } ]
+                           } ]
+                        }
+                     } ],
+                     "else" : {
+                        "asType" : "{urn:hl7-org:elm-types:r1}DateTime",
+                        "type" : "As",
+                        "operand" : {
+                           "type" : "Null"
+                        }
+                     }
+                  }
+               } ],
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}DateTime",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
+               }
+            },
+            "operand" : [ {
+               "name" : "eligibleDate",
+               "operandTypeSpecifier" : {
+                  "name" : "{urn:hl7-org:elm-types:r1}DateTime",
+                  "type" : "NamedTypeSpecifier"
+               }
+            } ]
+         }, {
+            "name" : "BR2_11_ClaimantServedAfterNine10",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Case",
+               "caseItem" : [ {
+                  "when" : {
+                     "type" : "Not",
+                     "operand" : {
+                        "type" : "Exists",
+                        "operand" : {
+                           "name" : "ServiceInterval",
+                           "type" : "ExpressionRef"
+                        }
+                     }
+                  },
+                  "then" : {
+                     "name" : "notServed",
+                     "type" : "ExpressionRef"
+                  }
+               }, {
+                  "when" : {
+                     "type" : "Before",
+                     "operand" : [ {
+                        "type" : "End",
+                        "operand" : {
+                           "name" : "Last",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "name" : "ServiceInterval",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }
+                     }, {
+                        "name" : "nine11",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "then" : {
+                     "name" : "notEligible",
+                     "type" : "ExpressionRef"
+                  }
+               }, {
+                  "when" : {
+                     "type" : "Or",
+                     "operand" : [ {
+                        "type" : "Or",
+                        "operand" : [ {
+                           "type" : "And",
+                           "operand" : [ {
+                              "type" : "Before",
+                              "operand" : [ {
+                                 "type" : "Start",
+                                 "operand" : {
+                                    "name" : "Last",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "ServiceInterval",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }
+                              }, {
+                                 "name" : "nine11",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "type" : "After",
+                              "operand" : [ {
+                                 "type" : "End",
+                                 "operand" : {
+                                    "name" : "Last",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "ServiceInterval",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }
+                              }, {
+                                 "name" : "nine10",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           } ]
+                        }, {
+                           "type" : "And",
+                           "operand" : [ {
+                              "type" : "After",
+                              "operand" : [ {
+                                 "type" : "Start",
+                                 "operand" : {
+                                    "name" : "Last",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "ServiceInterval",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }
+                              }, {
+                                 "name" : "nine11",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "type" : "After",
+                              "operand" : [ {
+                                 "type" : "End",
+                                 "operand" : {
+                                    "name" : "Last",
+                                    "type" : "FunctionRef",
+                                    "operand" : [ {
+                                       "name" : "ServiceInterval",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }
+                              }, {
+                                 "name" : "nine11",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "name" : "isOnActiveDuty",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "then" : {
+                     "name" : "goToBR2",
+                     "type" : "ExpressionRef"
+                  }
+               } ],
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
+               }
+            }
+         }, {
+            "name" : "BR2_12_ClaimantServed90AggregateDaysWithoutTraining",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "Case",
+               "caseItem" : [ {
+                  "when" : {
+                     "type" : "Less",
+                     "operand" : [ {
+                        "name" : "TotalAggregateQualifyingDays",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "90",
+                        "type" : "Literal"
+                     } ]
+                  },
+                  "then" : {
+                     "name" : "goToBR3",
+                     "type" : "ExpressionRef"
+                  }
+               }, {
+                  "when" : {
+                     "type" : "GreaterOrEqual",
+                     "operand" : [ {
+                        "name" : "TotalAggregateQualifyingDays",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "90",
+                        "type" : "Literal"
+                     } ]
+                  },
+                  "then" : {
+                     "type" : "If",
+                     "condition" : {
+                        "name" : "isOnActiveDuty",
+                        "type" : "ExpressionRef"
+                     },
+                     "then" : {
+                        "name" : "goToBR4",
+                        "type" : "ExpressionRef"
+                     },
+                     "else" : {
+                        "type" : "Case",
+                        "caseItem" : [ {
+                           "when" : {
+                              "type" : "Exists",
+                              "operand" : {
+                                 "type" : "Query",
+                                 "source" : [ {
+                                    "alias" : "S",
+                                    "expression" : {
+                                       "name" : "serviceParameters",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ],
+                                 "relationship" : [ ],
+                                 "where" : {
+                                    "type" : "Equal",
+                                    "operand" : [ {
+                                       "path" : "Character",
+                                       "scope" : "S",
+                                       "type" : "Property"
+                                    }, {
+                                       "name" : "HON",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }
+                              }
+                           },
+                           "then" : {
+                              "name" : "goToBR4",
+                              "type" : "ExpressionRef"
+                           }
+                        } ],
+                        "else" : {
+                           "type" : "Case",
+                           "caseItem" : [ {
+                              "when" : {
+                                 "type" : "And",
+                                 "operand" : [ {
+                                    "type" : "Exists",
+                                    "operand" : {
+                                       "type" : "Query",
+                                       "source" : [ {
+                                          "alias" : "S",
+                                          "expression" : {
+                                             "name" : "serviceParameters",
+                                             "type" : "ExpressionRef"
+                                          }
+                                       } ],
+                                       "relationship" : [ ],
+                                       "where" : {
+                                          "type" : "In",
+                                          "operand" : [ {
+                                             "path" : "SepReason",
+                                             "scope" : "S",
+                                             "type" : "Property"
+                                          }, {
+                                             "name" : "sepreason",
+                                             "type" : "ExpressionRef"
+                                          } ]
+                                       }
+                                    }
+                                 }, {
+                                    "type" : "Exists",
+                                    "operand" : {
+                                       "type" : "Query",
+                                       "source" : [ {
+                                          "alias" : "S",
+                                          "expression" : {
+                                             "name" : "serviceParameters",
+                                             "type" : "ExpressionRef"
+                                          }
+                                       } ],
+                                       "relationship" : [ ],
+                                       "where" : {
+                                          "type" : "Not",
+                                          "operand" : {
+                                             "type" : "Equal",
+                                             "operand" : [ {
+                                                "path" : "Character",
+                                                "scope" : "S",
+                                                "type" : "Property"
+                                             }, {
+                                                "name" : "DIS",
+                                                "type" : "ExpressionRef"
+                                             } ]
+                                          }
+                                       }
+                                    }
+                                 } ]
+                              },
+                              "then" : {
+                                 "name" : "goToBR4",
+                                 "type" : "ExpressionRef"
+                              }
+                           }, {
+                              "when" : {
+                                 "type" : "Exists",
+                                 "operand" : {
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "alias" : "S",
+                                       "expression" : {
+                                          "name" : "serviceParameters",
+                                          "type" : "ExpressionRef"
+                                       }
+                                    } ],
+                                    "relationship" : [ ],
+                                    "where" : {
+                                       "type" : "Not",
+                                       "operand" : {
+                                          "type" : "In",
+                                          "operand" : [ {
+                                             "path" : "SepReason",
+                                             "scope" : "S",
+                                             "type" : "Property"
+                                          }, {
+                                             "name" : "sepreason",
+                                             "type" : "ExpressionRef"
+                                          } ]
+                                       }
+                                    }
+                                 }
+                              },
+                              "then" : {
+                                 "name" : "notEligible",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ],
+                           "else" : {
+                              "asType" : "{urn:hl7-org:elm-types:r1}Integer",
+                              "type" : "As",
+                              "operand" : {
+                                 "type" : "Null"
+                              }
+                           }
+                        }
+                     }
+                  }
+               } ],
+               "else" : {
+                  "asType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "type" : "As",
+                  "operand" : {
+                     "type" : "Null"
+                  }
+               }
+            }
+         }, {
+            "name" : "BR2_13_ClaimantServedAtleast30ContinuousDays",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "If",
+               "condition" : {
+                  "type" : "Not",
+                  "operand" : {
+                     "name" : "served30ContinousDays",
+                     "type" : "ExpressionRef"
+                  }
+               },
+               "then" : {
+                  "name" : "notEligible",
+                  "type" : "ExpressionRef"
+               },
+               "else" : {
+                  "type" : "If",
+                  "condition" : {
+                     "type" : "Exists",
+                     "operand" : {
+                        "type" : "Query",
+                        "source" : [ {
+                           "alias" : "S",
+                           "expression" : {
+                              "name" : "serviceParameters",
+                              "type" : "ExpressionRef"
+                           }
+                        } ],
+                        "relationship" : [ ],
+                        "where" : {
+                           "type" : "Equal",
+                           "operand" : [ {
+                              "path" : "SepReason",
+                              "scope" : "S",
+                              "type" : "Property"
+                           }, {
+                              "name" : "DIS",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }
+                     }
+                  },
+                  "then" : {
+                     "name" : "goToBR5",
+                     "type" : "ExpressionRef"
+                  },
+                  "else" : {
+                     "name" : "notEligible",
+                     "type" : "ExpressionRef"
+                  }
+               }
+            }
+         }, {
+            "name" : "BR2_14_SetEligibilityDateTo90thDay",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "CalculateClaimantEligibilityDate",
+               "type" : "IdentifierRef"
+            }
+         }, {
+            "name" : "BR2_15_SetEligibilityDateToRAD",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Last",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "Query",
+                  "source" : [ {
+                     "alias" : "SP",
+                     "expression" : {
+                        "name" : "serviceParameters",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "type" : "Equal",
+                     "operand" : [ {
+                        "path" : "SepReason",
+                        "scope" : "SP",
+                        "type" : "Property"
+                     }, {
+                        "name" : "DIS",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "return" : {
+                     "expression" : {
+                        "path" : "S",
+                        "scope" : "SP",
+                        "type" : "Property"
+                     }
+                  },
+                  "sort" : {
+                     "by" : [ {
+                        "direction" : "asc",
+                        "type" : "ByExpression",
+                        "expression" : {
+                           "type" : "End",
+                           "operand" : {
+                              "path" : "S",
+                              "scope" : "SP",
+                              "type" : "Property"
+                           }
+                        }
+                     } ]
+                  }
+               } ]
+            }
+         } ]
+      }
+   }
+}
